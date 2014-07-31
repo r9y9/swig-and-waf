@@ -1,0 +1,17 @@
+#!/usr/bin/python
+# coding: utf-8
+
+def configure(conf):
+        pass
+
+def build(bld):
+	bld(
+                features = 'c cshlib pyext',
+		source = 'example.c example.i',
+		target = '_example',
+		swig_flags = '-python -Wall',
+                vnum='0.0.1',
+		includes = '.'
+        )
+        
+	bld.install_files(bld.env['PYTHONDIR'], 'example.py')
