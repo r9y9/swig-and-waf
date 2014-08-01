@@ -5,8 +5,8 @@ def configure(conf):
         pass
 
 def build(bld):
-	bld(
-                features = 'c cshlib pyext',
+	bld.shlib(
+                features = 'pyext',
 		source = 'example.c example.i',
 		target = '_example',
 		swig_flags = '-python -Wall',
